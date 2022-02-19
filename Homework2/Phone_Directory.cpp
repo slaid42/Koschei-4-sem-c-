@@ -17,12 +17,10 @@ public:
         m.insert(std::make_pair(name, number));
     }
     void FindNumber(std::string name) {
-        if (m[name]) {
-            std::cout << name << ":" << m[name] << std::endl;
-        }
-        else {
-            m.erase(name);
+        if (m.find(name) == std::end(m)) {
             std::cout << "There are nobody with this name" << std::endl;
+        }else {
+            std::cout << name << ":" << m.find(name)->second << std::endl;
         }
     }
     void GetAllSortedNumbers() {
