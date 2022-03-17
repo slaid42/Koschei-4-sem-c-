@@ -76,7 +76,7 @@ void for_each(void f(T), Iterator first, Iterator last, int num_workers) {
 }
 
 void function(int& a) {
-    a = std::sin(a)+std::cos(a);
+    a += 777;
 }  
 
 
@@ -87,6 +87,6 @@ int main()
     std::iota(test_sequence.begin(), test_sequence.end(), 0);
     {
         Timer<microseconds> t;
-        for_each(function, test_sequence.begin(), test_sequence.end(), 7);
+        for_each(function, test_sequence.begin(), test_sequence.end(), 1);
     }
 }
